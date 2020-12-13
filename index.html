@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="name">
+                <h2>Shmagi Oniani</h2>
+            </div>
+            <div class="social-icons">
+                <div class="facebook">
+                    <img src="assets/images/facebook-bright.png" class="facebook-bright" alt="">
+                </div>
+                <div class="github">
+                    <img src="assets/images/github-bright.png" class="github-bright" alt="">
+                </div>
+            </div>
+        </nav>
+        <div class="left-bar">
+            <ul>
+                <li  onclick="homeActive()"><a href="#home">home</a></li>
+                <li  onclick="projectsActive()"><a href="#nav-project">project</a></li>
+                <li  onclick="aboutActive()"><a href="#nav-about">about</a></li>
+                <li  onclick="contactActive()"><a href="#nav-contact">contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="bg-container">
+        <div class="pre-nex">
+            <div class="down-arrow" onclick="moveDown()">
+                <div class="down"></div>
+            </div>
+            <div class="up-arrow" onclick="moveUp()">
+                <div class="up"></div>
+            </div>
+        </div>
+        <img src="assets/images/stars.svg" alt="" class="star layer" data-speed="20000">
+        <img src="assets/images/circles.svg" alt="" class="moon-shine layer " data-speed="30000">
+    </section>
+    <div id="home" class="active">
+        <div class="home-text">
+            <h1 class="left-fade">SHMAGI</h1>
+            <h1 class="left-fade">ONIANI</h1>
+            <div class="underlines left-fade"></div>
+            <p class="left-fade">web designer /</p>
+            <p class="left-fade">markup engineer.</p>
+        </div>
+        <img src="assets/images/bright-shade(1).png" alt="" class="bright-shade-1 layer fade" data-speed="50000">
+        <img src="assets/images/bright-shade(2).png" alt="" class="bright-shade-2 layer fade" data-speed="70000">
+        <img src="assets/images/moon.svg" alt="" class="moon layer fade" data-speed="30000">
+        <img src="assets/images/portfolio(1).svg" alt="" class="portfolio layer fade" data-speed="40000">
+        <img src="assets/images/dark-shade(1).png" alt="" class="dark-shade-1 layer fade" data-speed="40000">
+        <img src="assets/images/dark-shade(2).png" alt="" class="dark-shade-2 layer fade" data-speed="60000">
+        <img src="assets/images/dark-shade(3).png" alt="" class="dark-shade-3 layer fade" data-speed="50000">
+
+    </div>
+
+    <div class="curtain"></div>
+    <div id="about" >
+        <div class="about-header">
+            <h1 class="left-fade">About Me</h1>
+            <div class="underlines left-fade"></div>
+            <p class="left-fade">I love Design, Technology,</p>
+            <p class="left-fade">and Story.</p>
+            <a class="button left-fade" onclick="aboutMeIn()">Show me more</a>
+        </div>
+        <div class="about-img">
+            <div class="image">
+                <img src="assets/images/Me.jpg" alt="">
+            </div>
+            <div class="page-num"></div>
+        </div>
+    </div> 
+    <div id="more-me">
+        <div class="more-about"></div>
+    </div>
+    <div id="contact" >
+        <div class="contact-header">
+            <h1 class="left-fade">Contact Me</h1>
+            <div class="underlines left-fade"></div>
+            <p class="left-fade phone">E-mail :  <a href=""> onianishmagi@gmail.com</a></p>
+            <p class="left-fade">Mobile Phone :  (+995) 579 994 845</p>
+           
+        </div>
+        <div class="contact-img">
+            <div class="image">
+                <img src="assets/images/contact.jpg" alt="">
+            </div>
+            <div class="page-num"></div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/app/app.js"></script>
+</body>
+
+</html>

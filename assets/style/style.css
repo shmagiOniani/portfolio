@@ -1,0 +1,906 @@
+@-webkit-keyframes curtainUp {
+  from {
+    height: 100vh;
+  }
+  to {
+    height: 0vh;
+  }
+}
+
+@keyframes curtainUp {
+  from {
+    height: 100vh;
+  }
+  to {
+    height: 0vh;
+  }
+}
+
+@-webkit-keyframes rightFade {
+  from {
+    -webkit-transform: translate3d(300px, 0px, 0px);
+            transform: translate3d(300px, 0px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0px, 0px);
+            transform: translate3d(0, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes rightFade {
+  from {
+    -webkit-transform: translate3d(300px, 0px, 0px);
+            transform: translate3d(300px, 0px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0px, 0px);
+            transform: translate3d(0, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes leftFade {
+  from {
+    -webkit-transform: translate3d(-300px, 0px, 0px);
+            transform: translate3d(-300px, 0px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes leftFade {
+  from {
+    -webkit-transform: translate3d(-300px, 0px, 0px);
+            transform: translate3d(-300px, 0px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes topFade {
+  from {
+    -webkit-transform: translate3d(0px, -100px, 0px);
+            transform: translate3d(0px, -100px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes topFade {
+  from {
+    -webkit-transform: translate3d(0px, -100px, 0px);
+            transform: translate3d(0px, -100px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bottomFade {
+  from {
+    -webkit-transform: translate3d(0px, 100px, 0px);
+            transform: translate3d(0px, 100px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes bottomFade {
+  from {
+    -webkit-transform: translate3d(0px, 100px, 0px);
+            transform: translate3d(0px, 100px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: 'Catamaran-Light';
+  src: url(font/Catamaran-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: 'Catamaran-Regular';
+  src: url(font/Catamaran-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Catamaran-Light';
+  font-weight: 300;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body .active {
+  display: block !important;
+}
+
+body .curtain {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0vh;
+  background-color: #171c36;
+  -webkit-animation-name: curtainUp;
+          animation-name: curtainUp;
+  -webkit-animation-timing-function: cubic-bezier(0.7, 0, 0.12, 1.11);
+          animation-timing-function: cubic-bezier(0.7, 0, 0.12, 1.11);
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+body header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+body header nav {
+  height: 10vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body header nav .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20vw;
+  height: 100%;
+}
+
+body header nav .name h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: white;
+  font-family: 'Catamaran-Light';
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+body header nav .name h2:hover {
+  cursor: pointer;
+  color: #bebdbd;
+}
+
+body header nav .social-icons {
+  height: 100%;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 3rem;
+}
+
+body header nav .social-icons div {
+  width: 2rem;
+  height: auto;
+  margin: 0 2rem;
+  color: white;
+}
+
+body header nav .social-icons div img {
+  width: 100%;
+  height: auto;
+  padding: 1.1rem;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+body header nav .social-icons div:hover {
+  cursor: pointer;
+}
+
+body header nav .social-icons .facebook img:hover {
+  padding: 10px;
+  border: 1px solid #d2d2d8;
+  padding: 1rem;
+  background-color: cornflowerblue;
+}
+
+body header nav .social-icons .github {
+  width: 3.8rem !important;
+}
+
+body header nav .social-icons .github img:hover {
+  padding: 10px;
+  border: 1px solid darkblue;
+  border-radius: 30px;
+  background-color: black;
+}
+
+body header .left-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10vw;
+  height: 90vh;
+}
+
+body header .left-bar ul li {
+  list-style: none;
+}
+
+body header .left-bar ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+body #home {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 90vh;
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+body #home .fade {
+  -webkit-animation-name: rightFade;
+          animation-name: rightFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+          animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+}
+
+body #home .home-text {
+  position: absolute;
+  left: 0;
+  top: 15%;
+}
+
+body #home .home-text .left-fade {
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #home .home-text h1 {
+  font-size: 9rem;
+  font-weight: 200;
+  color: white;
+  font-family: 'Catamaran-Light';
+  height: 9rem;
+}
+
+body #home .home-text .underlines {
+  position: relative;
+  margin-top: 10%;
+  height: 8rem;
+  color: #fff;
+}
+
+body #home .home-text .underlines:before {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 2rem;
+  left: 1rem;
+}
+
+body #home .home-text .underlines:after {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 4rem;
+  left: 7rem;
+}
+
+body #home .home-text p {
+  font-size: 2rem;
+  color: white;
+  font-family: 'Catamaran-Light';
+}
+
+body #home .bright-shade-1 {
+  position: absolute;
+  top: 9%;
+  right: 5%;
+  width: 29rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+}
+
+body #home .bright-shade-2 {
+  position: absolute;
+  top: 9%;
+  right: 39%;
+  width: 28rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+}
+
+body #home .moon {
+  position: absolute;
+  top: 4.5%;
+  right: 12.2%;
+  width: 54rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+}
+
+body #home .portfolio {
+  position: absolute;
+  top: 42%;
+  right: 29%;
+  width: 46rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+body #home .dark-shade-1 {
+  position: absolute;
+  top: 71%;
+  right: 12%;
+  width: 25rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+}
+
+body #home .dark-shade-2 {
+  position: absolute;
+  top: 64%;
+  right: 35%;
+  width: 34rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+}
+
+body #home .dark-shade-3 {
+  position: absolute;
+  top: 37%;
+  right: -1%;
+  width: 35rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+}
+
+body .bg-container {
+  position: relative;
+  background-image: url(../images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+body .bg-container .pre-nex {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  font-size: 5rem;
+  width: 100vw;
+}
+
+body .bg-container .pre-nex .down-arrow {
+  width: 9rem;
+}
+
+body .bg-container .pre-nex .down-arrow:hover {
+  cursor: pointer;
+}
+
+body .bg-container .pre-nex .down-arrow:hover .down {
+  background-color: #ff4848;
+}
+
+body .bg-container .pre-nex .down-arrow .down {
+  -webkit-animation-name: topFade;
+          animation-name: topFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+  position: relative;
+  left: 1rem;
+  bottom: 0;
+  background-color: white;
+  width: 0.3rem;
+  margin-bottom: 3rem;
+  height: 8rem;
+  margin-left: 6.5rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+body .bg-container .pre-nex .down-arrow .down:before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 7rem;
+  left: -2.4rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body .bg-container .pre-nex .down-arrow .down:after {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 7rem;
+  left: -0.4rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+body .bg-container .pre-nex .up-arrow {
+  width: 9rem;
+  padding-left: 2rem;
+}
+
+body .bg-container .pre-nex .up-arrow:hover {
+  cursor: pointer;
+}
+
+body .bg-container .pre-nex .up-arrow:hover .up {
+  background-color: #ff4848;
+}
+
+body .bg-container .pre-nex .up-arrow .up {
+  -webkit-animation-name: bottomFade;
+          animation-name: bottomFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+  position: relative;
+  left: 1rem;
+  bottom: 0;
+  background-color: white;
+  width: 0.3rem;
+  margin-bottom: 3rem;
+  height: 8rem;
+  margin-right: 6rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+body .bg-container .pre-nex .up-arrow .up:before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 1rem;
+  left: -2.4rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+body .bg-container .pre-nex .up-arrow .up:after {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 1rem;
+  left: -0.3rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body .bg-container .star {
+  position: absolute;
+  top: -112px;
+  right: 77px;
+  width: 89%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body .bg-container .moon-shine {
+  position: absolute;
+  right: -15%;
+  width: 135rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body #about {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 90vh;
+  width: 90vw;
+}
+
+body #about .about-header {
+  position: absolute;
+  left: 0;
+  top: 15%;
+}
+
+body #about .about-header .left-fade {
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #about .about-header h1 {
+  font-size: 9rem;
+  font-weight: 200;
+  color: white;
+  font-family: 'Catamaran-Light';
+  height: 9rem;
+}
+
+body #about .about-header .underlines {
+  position: relative;
+  margin-top: 10%;
+  height: 8rem;
+  color: #fff;
+}
+
+body #about .about-header .underlines:before {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 2rem;
+  left: 1rem;
+}
+
+body #about .about-header .underlines:after {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 4rem;
+  left: 7rem;
+}
+
+body #about .about-header p {
+  font-size: 2rem;
+  color: white;
+  font-family: 'Catamaran-Light';
+}
+
+body #about .about-header .button {
+  position: absolute;
+  margin-top: 2.5rem;
+  background-color: #ff4848;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #about .about-header .button:hover {
+  cursor: pointer;
+}
+
+body #about .about-img .image {
+  -webkit-animation-name: rightFade;
+          animation-name: rightFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+          animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+  position: absolute;
+  bottom: 16%;
+  right: 10%;
+  width: 50vw;
+  height: 75vh;
+}
+
+body #about .about-img .image img {
+  width: 100%;
+  height: auto;
+}
+
+body #more-me {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 90vh;
+  width: 90vw;
+}
+
+body #more-me .more-about {
+  width: 90vw;
+  height: 60vh;
+  background-color: rgba(91, 168, 47, 0.918);
+  -webkit-animation-name: rightFade;
+          animation-name: rightFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+          animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+}
+
+body #contact {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 90vh;
+  width: 90vw;
+}
+
+body #contact .contact-header {
+  position: absolute;
+  left: 0;
+  top: 15%;
+}
+
+body #contact .contact-header .left-fade {
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #contact .contact-header h1 {
+  font-size: 9rem;
+  font-weight: 200;
+  color: white;
+  font-family: 'Catamaran-Light';
+  height: 9rem;
+}
+
+body #contact .contact-header .underlines {
+  position: relative;
+  margin-top: 10%;
+  height: 8rem;
+  color: #fff;
+}
+
+body #contact .contact-header .underlines:before {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 2rem;
+  left: 1rem;
+}
+
+body #contact .contact-header .underlines:after {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 4rem;
+  left: 7rem;
+}
+
+body #contact .contact-header p {
+  font-size: 2rem;
+  color: white;
+  font-family: 'Catamaran-Light';
+}
+
+body #contact .contact-header .button {
+  position: absolute;
+  margin-top: 2.5rem;
+  background-color: #ff4848;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #contact .contact-header .button:hover {
+  cursor: pointer;
+}
+
+body #contact .contact-header .phone a {
+  color: cornflowerblue;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+body #contact .contact-header .phone a:hover {
+  color: azure;
+}
+
+body #contact .contact-img .image {
+  -webkit-animation-name: rightFade;
+          animation-name: rightFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+          animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+  position: absolute;
+  bottom: 10%;
+  right: 10rem;
+  width: 52vw;
+  height: 75vh;
+}
+
+body #contact .contact-img .image img {
+  width: 100%;
+  height: auto;
+}
+/*# sourceMappingURL=style.css.map */

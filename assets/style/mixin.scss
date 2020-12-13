@@ -1,0 +1,137 @@
+@mixin hover {
+    transition: all 0.2s ease-in-out;
+        &:hover {
+            cursor: pointer;
+            color: rgb(190, 189, 189);
+        }
+}
+
+@mixin container {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    height: 90vh;
+    width: 90vw;
+}
+
+@mixin appear {
+    animation-name: appear;
+    animation-duration: 2s;
+}
+
+@mixin headerStyle {
+    position: absolute;
+    left: 0;
+    top: 15%;
+    .left-fade {
+        @include leftFade;
+    }
+    h1 {
+        @include h1;
+        height: 9rem;
+    }
+    .underlines {
+        position: relative;
+        margin-top: 10%;
+        height: 8rem;
+        color: #fff;
+        &:before {
+            @include headerUnderline;
+            top: 2rem;
+            left: 1rem;
+        }
+        &:after {
+            @include headerUnderline;
+            top: 4rem;
+            left: 7rem;
+        }
+
+    }
+    p {
+        @include p;
+    }
+}
+
+@mixin rightFade {
+    animation-name: rightFade;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(.59,.36,.82,1.18);
+}
+
+@mixin leftFade {
+    animation-name: leftFade;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(.72,.27,.33,1.13);
+}
+
+@mixin topFade {
+    animation-name: topFade;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(.72,.27,.33,1.13);
+}
+
+@mixin bottomFade {
+    animation-name: bottomFade;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(.72,.27,.33,1.13);
+}
+
+@mixin h1 {
+    font-size: 9rem;
+    font-weight: 200;
+    color: white;
+    font-family: 'Catamaran-Light';
+}
+
+@mixin h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: white;
+    font-family: 'Catamaran-Light';
+}
+
+@mixin p {
+    font-size: 2rem;
+    color: white;
+    font-family: 'Catamaran-Light';
+}
+
+@mixin headerUnderline {
+    content: "";
+    position: absolute;
+    width: 9rem;
+    height: 0.1rem;
+    border: 0.1rem solid rgb(255, 72, 72);
+    border-radius: 2rem;
+    background-color: rgb(255, 72, 72);
+}
+
+@mixin button {
+    background-color: rgb(255, 72, 72);
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+@mixin arrow {
+    position: relative;
+    left: 1rem;
+    bottom: 0;
+    background-color: white;
+    width: 0.3rem;
+    margin-bottom: 3rem;
+    height: 8rem;
+}
+
+@mixin arrowHead {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 0.3rem;
+    border-radius: 2rem;
+    background-color: #ff4848;
+}
+

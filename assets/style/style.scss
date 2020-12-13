@@ -1,0 +1,379 @@
+@import 'mixin', 'animation','fonts', 'variables'; 
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Catamaran-Light';
+    font-weight: 300;
+    width: 100vw;
+    overflow: hidden;
+    .active {
+        display: block!important;
+    }
+    .curtain {
+        position: absolute;
+        z-index : 2;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 0vh;
+        background-color: rgb(23, 28, 54);
+        animation-name: curtainUp;
+        animation-timing-function: cubic-bezier(.7,0,.12,1.11);
+        animation-duration: 2s;
+    }
+    header {
+        // display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        @include appear;
+        nav {
+            height: 10vh;
+            width: 100vw;
+            display: flex;
+            .name {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                width: 20vw;
+                height: 100%;
+                h2 {
+                    @include h2;
+                    @include hover;
+                }
+            }
+            .social-icons {
+                height: 100%;
+                width: 80vw;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-right: 3rem;
+                div {
+                    width: 2rem;
+                    height: auto;
+                    margin: 0 2rem;
+                    color: white;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        padding: 1.1rem;
+                        transition: all 1s ease;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        
+                    }
+                }
+                .facebook {
+                    img {
+                        &:hover {
+                            padding: 10px;
+                            border: 1px solid #d2d2d8;
+                            padding: 1rem;
+                            background-color: cornflowerblue;
+                        }
+                    }
+                }
+                .github {
+                    width: 3.8rem!important;
+                    img {
+                        &:hover {
+
+                            padding: 10px;
+                            border: 1px solid darkblue;
+                            border-radius: 30px;
+                            background-color: black;
+                        }
+                    }
+                }
+            }
+        }
+        .left-bar {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            width: 10vw;
+            height: 90vh;
+            ul {
+                li {
+                    list-style: none;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    #home {
+        @include container;
+        display: flex;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: all 2s;
+        .fade {
+            @include rightFade;
+        }
+        .home-text {
+            @include headerStyle;
+
+        }
+        .bright-shade-1 {
+            position: absolute;
+            top: 9%;
+            right: 5%;
+            width: 29rem;
+            height: auto;
+            object-fit: cover;
+            animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+        }
+        .bright-shade-2 {
+            position: absolute;
+            top: 9%;
+            right: 39%;
+            width: 28rem;
+            height: auto;
+            object-fit: cover;
+            animation-timing-function: cubic-bezier(.71,.35,.42,1.35);
+        }
+        .moon {
+            position: absolute;
+            top: 4.5%;
+            right: 12.2%;
+            width: 54rem;
+            height: auto;
+            object-fit: cover;
+            animation-timing-function: cubic-bezier(.71,.35,.42,1.35);
+        }
+        .portfolio {
+            position: absolute;
+            top: 42%;
+            right: 29%;
+            width: 46rem;
+            height: auto;
+            object-fit: cover;
+            animation-timing-function: ease;
+        }
+        .dark-shade-1 {
+            position: absolute;
+            top: 71%;
+            right: 12%;
+            width: 25rem;
+            height: auto;
+            object-fit: cover;
+            animation-timing-function: cubic-bezier(.71,.35,.42,1.35);
+        }
+        .dark-shade-2 {
+            position: absolute;
+            top: 64%;
+            right: 35%;
+            width: 34rem;
+            height: auto;
+            object-fit: cover;
+            animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+        }
+        .dark-shade-3 {
+            position: absolute;
+            top: 37%;
+            right: -1%;
+            width: 35rem;
+            height: auto;
+            object-fit: cover;
+            animation-timing-function: cubic-bezier(.84,.04,.42,1.35);
+        }
+
+    }
+    .bg-container {
+        position: relative;
+        background-image: url(../images/background.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        .pre-nex {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-size: 5rem;
+            width: 100vw;
+            .down-arrow {
+                width: 9rem;
+                &:hover {
+                    cursor: pointer;
+                    .down {
+                        
+                        background-color: $dominant-red;
+                    }
+                }
+                .down {
+                    @include topFade;
+                    @include arrow;
+                    margin-left: 6.5rem;
+                    transition: all 0.2s ease-in;
+                    &:before {
+                        @include arrowHead;
+                        top: 7rem;
+                        left: -2.4rem;
+                        transform: rotate(45deg);
+                    }
+                    &:after {
+                        @include arrowHead;
+                        top: 7rem;
+                        left: -0.4rem;
+                        transform: rotate(-45deg);
+                    }
+                }
+            } 
+            .up-arrow {
+                width: 9rem;
+                padding-left: 2rem;
+                &:hover {
+                    cursor: pointer;
+                    .up {
+                        background-color: $dominant-red;
+                    }
+                }
+                .up {
+                    @include bottomFade;
+                    @include arrow;
+                    margin-right: 6rem;
+                    transition: all 0.2s ease-in;
+                    &:before {
+                        @include arrowHead;
+                        top: 1rem;
+                        left: -2.4rem;
+                        transform: rotate(-45deg);
+                    }
+                    &:after {
+                        @include arrowHead;
+                        top: 1rem;
+                        left: -0.3rem;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+        .star {
+            position: absolute;
+            top: -112px;
+            right: 77px;
+            width: 89%;
+            height: auto;
+            object-fit: cover;
+        }
+        .moon-shine {
+            position: absolute;
+            right: -15%;
+            width: 135rem;
+            height: auto;
+            object-fit: cover;
+        }
+        
+    }
+    #about {
+        display: none;
+
+        @include container;
+        .about-header {
+            @include headerStyle;
+            
+            .button {
+                position: absolute;
+                margin-top: 2.5rem;
+                @include button;
+                @include leftFade;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .about-img {
+            .image {
+                @include rightFade;
+                position: absolute;
+                bottom: 16%;
+                right: 10%;
+                width: 50vw;
+                height: 75vh;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    #more-me {
+        display: none;
+        @include container;
+        .more-about {
+            width: 90vw;
+            height: 60vh;
+            background-color: rgba(91, 168, 47, 0.918);
+            @include rightFade;
+        }
+    }
+    #contact { 
+        display: none;
+        @include container;
+        .contact-header {
+            @include headerStyle;
+            
+            .button {
+                position: absolute;
+                margin-top: 2.5rem;
+                @include button;
+                @include leftFade;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .phone {    
+                a{
+                    color: cornflowerblue;
+                    transition: all 0.2s ease-in-out;
+                    &:hover {
+                        color: azure;
+                    }
+                }
+            }
+        }
+        .contact-img {
+            .image {
+                @include rightFade;
+                position: absolute;
+                bottom: 10%;
+                right: 10rem;
+                width: 52vw;
+                height: 75vh;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        
+    }
+}
