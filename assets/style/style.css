@@ -1029,8 +1029,7 @@ body #contact .contact-img .image img {
     width: 100%;
   }
   body #home {
-    bottom: -15%;
-    display: none;
+    bottom: -5%;
   }
   body #home .home-text {
     position: absolute;
@@ -1139,7 +1138,7 @@ body #contact .contact-img .image img {
     display: none;
   }
   body #about {
-    bottom: -15%;
+    bottom: -5%;
   }
   body #about .about-img .image {
     display: -webkit-box;
@@ -1164,7 +1163,7 @@ body #contact .contact-img .image img {
     width: 20.6vw;
   }
   body #contact {
-    bottom: -15%;
+    bottom: -5%;
   }
   body #contact .contact-img .image {
     display: -webkit-box;
