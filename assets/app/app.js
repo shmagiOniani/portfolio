@@ -13,50 +13,76 @@ function parallax(e){
 function moveUp () {
     if($('#contact').hasClass('active')){
         $('#contact').removeClass('active');
-        $('#nav-contact').removeClass('active-nav');
         $('#about').addClass('active');
+        // nav
+        $('#nav-contact').removeClass('active-nav');
         $('#nav-about').addClass('active-nav');
+        // arrows   
+        $('#up-arrow').addClass('active-arrow');
+        $('#down-arrow').addClass('active-arrow');
+
     }else if($('#about').hasClass('active')){
         $('#about').removeClass('active');
-        $('#nav-about').removeClass('active-nav');
         $('#home').addClass('active');
+        // nav
+        $('#nav-about').removeClass('active-nav');
         $('#nav-home').addClass('active-nav');
+        // arrows   
+        $('#up-arrow').removeClass('active-arrow');
+        $('#down-arrow').addClass('active-arrow');
     }
 }
 
 function moveDown () {
     if($('#home').hasClass('active')){
         $('#home').removeClass('active');
-        $('#nav-home').removeClass('active-nav');
         $('#about').addClass('active');
+        // nav
+        $('#nav-home').removeClass('active-nav');
         $('#nav-about').addClass('active-nav');
+        // arrow
+        $('#up-arrow').addClass('active-arrow');
+        $('#down-arrow').addClass('active-arrow');
+
     }else if($('#about').hasClass('active')){
         $('#about').removeClass('active');
-        $('#nav-about').removeClass('active-nav');
         $('#contact').addClass('active');
+        // nav
+        $('#nav-about').removeClass('active-nav');
         $('#nav-contact').addClass('active-nav');
+        // arrow
+        $('#up-arrow').addClass('active-arrow');
+        $('#down-arrow').removeClass('active-arrow');
     }
 }
 
 function aboutMeIn() {
     $('#about').removeClass('active');
     $('#more-me').addClass('active');
+    $('#up-arrow').removeClass('active-arrow');
+    $('#down-arrow').removeClass('active-arrow');
 }
 
 function aboutMeOut() {
     $('#more-me').removeClass('active');
     $('#about').addClass('active');
+    $('#up-arrow').addClass('active-arrow');
+    $('#down-arrow').addClass('active-arrow');
 }
 
 function homeActive() {
     $('#about').removeClass('active');
-    $('#nav-about').removeClass('active-nav');
     // $('#projects').removeClass('active');
     $('#more-me').removeClass('active');
     $('#contact').removeClass('active');
-    $('#nav-contact').removeClass('active-nav');
     $('#home').addClass('active');
+    // nav
+    $('#nav-about').removeClass('active-nav');
+    $('#nav-contact').removeClass('active-nav');
     $('#nav-home').addClass('active-nav');
+    // arrow
+    $('#up-arrow').removeClass('active-arrow');
+    $('#down-arrow').addClass('active-arrow');
 }
 // function projectsActive() {
 //     $('#home').removeClass('active');
@@ -67,23 +93,32 @@ function homeActive() {
 // }
 function aboutActive() {
     $('#home').removeClass('active');
-    $('#nav-home').removeClass('active-nav');
     // $('#projects').removeClass('active');
     $('#more-me').removeClass('active');
     $('#contact').removeClass('active');
-    $('#nav-contact').removeClass('active-nav');
     $('#about').addClass('active');
+    // nav
+    $('#nav-home').removeClass('active-nav');
+    $('#nav-contact').removeClass('active-nav');
     $('#nav-about').addClass('active-nav');
+    // arrow
+    $('#up-arrow').addClass('active-arrow');
+    $('#down-arrow').addClass('active-arrow');
 }
 function contactActive() {
     $('#home').removeClass('active');
-    $('#nav-home').removeClass('active-nav');
     $('#about').removeClass('active');
-    $('#nav-about').removeClass('active-nav');
     // $('#projects').removeClass('active');
     $('#more-me').removeClass('active');
     $('#contact').addClass('active');
+    // nav  
+    $('#nav-home').removeClass('active-nav');
+    $('#nav-about').removeClass('active-nav');
     $('#nav-contact').addClass('active-nav');
+    // arrow    
+    $('#up-arrow').addClass('active-arrow');
+    $('#down-arrow').removeClass('active-arrow');
+
 }
 
 // $(document).ready(function(){
