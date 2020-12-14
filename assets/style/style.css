@@ -1030,6 +1030,7 @@ body #contact .contact-img .image img {
   }
   body #home {
     bottom: -15%;
+    display: none;
   }
   body #home .home-text {
     position: absolute;

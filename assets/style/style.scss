@@ -445,6 +445,7 @@ body {
       }
       #home {
         bottom: -15%;
+        display: none;
         .home-text {
           @include headerStyle;
         }
