@@ -1028,6 +1028,9 @@ body #contact .contact-img .image img {
     right: 0;
     width: 100%;
   }
+  body #home {
+    bottom: -5%;
+  }
   body #home .home-text {
     position: absolute;
     left: 0;
@@ -1134,6 +1137,9 @@ body #contact .contact-img .image img {
   body #home .dark-shade-3 {
     display: none;
   }
+  body #about {
+    bottom: -5%;
+  }
   body #about .about-img .image {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1147,7 +1153,7 @@ body #contact .contact-img .image img {
     padding-right: 19rem;
   }
   body #more-me {
-    bottom: -30%;
+    bottom: -25%;
   }
   body #more-me .more-me-image {
     top: 5.5%;
@@ -1155,6 +1161,9 @@ body #contact .contact-img .image img {
   body #more-me .more-me-image .image {
     height: 16.5vh;
     width: 20.6vw;
+  }
+  body #contact {
+    bottom: -5%;
   }
   body #contact .contact-img .image {
     display: -webkit-box;
