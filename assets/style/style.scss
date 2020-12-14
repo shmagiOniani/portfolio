@@ -1,4 +1,4 @@
-@import "mixin", "animation", "fonts", "variables";
+@import "mixin", "animation", "fonts", "variables","break-point";
 
 * {
   margin: 0;
@@ -416,4 +416,126 @@ body {
       }
     }
   }
+
+}
+@media only screen and (max-width: 600px) {
+    html{
+    font-size: 3px;
+    }
+    body {
+      overflow: hidden;
+      header {
+        .left-bar {
+          height: 75vh;
+          ul {
+            font-size: 3rem;
+          }
+        }
+      }
+      .bg-container {
+        .star {
+          top: 106px;
+          right: 0;
+          width: 100%;
+        }
+        .moon-shine {
+          right: 0;
+          width: 100%;
+        }
+      }
+      #home {
+        .home-text {
+          @include headerStyle;
+        }
+        .bright-shade-1 {
+          position: absolute;
+          top: 30%;
+          right: 20%;
+          width: 29rem;
+          height: auto;
+          object-fit: cover;
+        }
+        .bright-shade-2 {
+          display: none;
+        }
+        .moon {
+          position: absolute;
+          top: 30.5%;
+          right: 30.5%;
+          width: 54rem;
+          height: auto;
+          object-fit: cover;
+        }
+        .portfolio {
+          position: absolute;
+          top: 42%;
+          right: 35%;
+          width: 46rem;
+          height: auto;
+          object-fit: cover;
+          animation-timing-function: ease;
+        }
+        .dark-shade-1 {
+          position: absolute;
+          top: 49%;
+          right: 22%;
+          width: 25rem;
+          height: auto;
+          object-fit: cover;
+        }
+        .dark-shade-2 {
+          position: absolute;
+          top: 47%;
+          right: 61%;
+          width: 30rem;
+          height: auto;
+          object-fit: cover;
+        }
+        .dark-shade-3 {
+          display: none;
+        }
+
+      }
+      #about {
+        .about-img {
+          .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 19rem;
+          }
+        }
+      }
+      #more-me {
+        bottom: -30%;
+        .more-me-image {
+          top: 5.5%;
+          .image {
+            height: 16.5vh;
+    width: 20.6vw;
+          }
+        }
+      }
+      #contact {
+        .contact-img {
+          .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 10rem;
+            padding-right: 19rem;
+          }
+        }
+      }
+    }
+}
+@media only screen and (min-width: 768px) {
+    html{
+    font-size: 8px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    html{
+    font-size: 8px;
+    }
 }
