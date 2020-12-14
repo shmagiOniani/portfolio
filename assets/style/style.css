@@ -1013,6 +1013,9 @@ body #contact .contact-img .image img {
   body {
     overflow: hidden;
   }
+  body header {
+    margin-top: 20rem;
+  }
   body header .left-bar {
     height: 75vh;
   }
@@ -1029,7 +1032,7 @@ body #contact .contact-img .image img {
     width: 100%;
   }
   body #home {
-    bottom: -5%;
+    bottom: -10%;
   }
   body #home .home-text {
     position: absolute;
@@ -1138,7 +1141,7 @@ body #contact .contact-img .image img {
     display: none;
   }
   body #about {
-    bottom: -5%;
+    bottom: -10%;
   }
   body #about .about-img .image {
     display: -webkit-box;
@@ -1155,10 +1158,16 @@ body #contact .contact-img .image img {
   body #more-me {
     bottom: -25%;
   }
+  body #more-me .more-about {
+    width: 80vw;
+    bottom: 20%;
+  }
   body #more-me .more-me-image {
-    top: 5.5%;
+    top: 30.5%;
+    left: 35%;
   }
   body #more-me .more-me-image .image {
+    display: none;
     height: 16.5vh;
     width: 20.6vw;
   }

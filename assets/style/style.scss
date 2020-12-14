@@ -425,6 +425,7 @@ body {
     body {
       overflow: hidden;
       header {
+        margin-top: 20rem;
         .left-bar {
           height: 75vh;
           ul {
@@ -444,7 +445,7 @@ body {
         }
       }
       #home {
-        bottom: -5%;
+        bottom: -10%;
         .home-text {
           @include headerStyle;
         }
@@ -498,7 +499,7 @@ body {
 
       }
       #about {
-        bottom: -5%;
+        bottom: -10%;
         .about-img {
           .image {
             display: flex;
@@ -510,11 +511,17 @@ body {
       }
       #more-me {
         bottom: -25%;
+        .more-about {
+          width: 80vw;
+          bottom: 20%;
+        }
         .more-me-image {
-          top: 5.5%;
+          top: 30.5%;
+          left: 35%;
           .image {
+            display: none;
             height: 16.5vh;
-    width: 20.6vw;
+            width: 20.6vw;
           }
         }
       }
