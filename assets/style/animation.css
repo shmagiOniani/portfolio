@@ -1,18 +1,22 @@
 @-webkit-keyframes curtainUp {
   from {
-    height: 100vh;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
   }
   to {
-    height: 0vh;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
 
 @keyframes curtainUp {
   from {
-    height: 100vh;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
   }
   to {
-    height: 0vh;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
 

@@ -1,18 +1,22 @@
 @-webkit-keyframes curtainUp {
   from {
-    height: 100vh;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
   }
   to {
-    height: 0vh;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
 
 @keyframes curtainUp {
   from {
-    height: 100vh;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
   }
   to {
-    height: 0vh;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
 
@@ -158,30 +162,40 @@ html {
 }
 
 body {
-  font-family: 'Catamaran-Light';
+  font-family: "Catamaran-Light";
   font-weight: 300;
   width: 100vw;
   overflow: hidden;
 }
 
 body .active {
-  display: block !important;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-transform: translateY(0) translateX(0) scale(1) !important;
+          transform: translateY(0) translateX(0) scale(1) !important;
+}
+
+body .active-nav {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 body .curtain {
   position: absolute;
-  z-index: 2;
+  z-index: 100;
   top: 0;
   left: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
   width: 100vw;
-  height: 0vh;
+  height: 100vh;
   background-color: #171c36;
   -webkit-animation-name: curtainUp;
           animation-name: curtainUp;
   -webkit-animation-timing-function: cubic-bezier(0.7, 0, 0.12, 1.11);
           animation-timing-function: cubic-bezier(0.7, 0, 0.12, 1.11);
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 
 body header {
@@ -268,7 +282,6 @@ body header nav .social-icons div:hover {
 
 body header nav .social-icons .facebook img:hover {
   padding: 10px;
-  border: 1px solid #d2d2d8;
   padding: 1rem;
   background-color: cornflowerblue;
 }
@@ -279,15 +292,13 @@ body header nav .social-icons .github {
 
 body header nav .social-icons .github img:hover {
   padding: 10px;
-  border: 1px solid darkblue;
   border-radius: 30px;
   background-color: black;
 }
 
 body header .left-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-inline-grid;
+  display: inline-grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -297,6 +308,138 @@ body header .left-bar {
           align-items: center;
   width: 10vw;
   height: 90vh;
+}
+
+body header .left-bar .down-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2rem;
+}
+
+body header .left-bar .down-arrow:hover {
+  cursor: pointer;
+}
+
+body header .left-bar .down-arrow:hover .down {
+  background-color: #ff4848;
+}
+
+body header .left-bar .down-arrow .down {
+  -webkit-animation-name: topFade;
+          animation-name: topFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+  position: relative;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  width: 0.3rem;
+  height: 4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+body header .left-bar .down-arrow .down:before {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 3.5rem;
+  left: -1rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body header .left-bar .down-arrow .down:after {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 3.5rem;
+  left: -0.2rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+body header .left-bar .up-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+body header .left-bar .up-arrow:hover {
+  cursor: pointer;
+}
+
+body header .left-bar .up-arrow:hover .up {
+  background-color: #ff4848;
+}
+
+body header .left-bar .up-arrow .up {
+  -webkit-animation-name: bottomFade;
+          animation-name: bottomFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+  position: relative;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  width: 0.3rem;
+  height: 4rem;
+  right: 50% !important;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+body header .left-bar .up-arrow .up:before {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 0.4rem;
+  left: -1.1rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+body header .left-bar .up-arrow .up:after {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 0.4rem;
+  left: -0.1rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 body header .left-bar ul li {
@@ -318,7 +461,10 @@ body #home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: none;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -webkit-transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -326,8 +472,6 @@ body #home {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-  -webkit-transition: all 2s;
-  transition: all 2s;
 }
 
 body #home .fade {
@@ -425,8 +569,8 @@ body #home .bright-shade-2 {
 
 body #home .moon {
   position: absolute;
-  top: 4.5%;
-  right: 12.2%;
+  top: 3.5%;
+  right: 12.5%;
   width: 54rem;
   height: auto;
   -o-object-fit: cover;
@@ -438,7 +582,7 @@ body #home .moon {
 body #home .portfolio {
   position: absolute;
   top: 42%;
-  right: 29%;
+  right: 29.5%;
   width: 46rem;
   height: auto;
   -o-object-fit: cover;
@@ -518,121 +662,6 @@ body .bg-container .pre-nex {
   width: 100vw;
 }
 
-body .bg-container .pre-nex .down-arrow {
-  width: 9rem;
-}
-
-body .bg-container .pre-nex .down-arrow:hover {
-  cursor: pointer;
-}
-
-body .bg-container .pre-nex .down-arrow:hover .down {
-  background-color: #ff4848;
-}
-
-body .bg-container .pre-nex .down-arrow .down {
-  -webkit-animation-name: topFade;
-          animation-name: topFade;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
-          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
-  position: relative;
-  left: 1rem;
-  bottom: 0;
-  background-color: white;
-  width: 0.3rem;
-  margin-bottom: 3rem;
-  height: 8rem;
-  margin-left: 6.5rem;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-
-body .bg-container .pre-nex .down-arrow .down:before {
-  content: "";
-  position: absolute;
-  width: 3rem;
-  height: 0.3rem;
-  border-radius: 2rem;
-  background-color: #ff4848;
-  top: 7rem;
-  left: -2.4rem;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-body .bg-container .pre-nex .down-arrow .down:after {
-  content: "";
-  position: absolute;
-  width: 3rem;
-  height: 0.3rem;
-  border-radius: 2rem;
-  background-color: #ff4848;
-  top: 7rem;
-  left: -0.4rem;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-body .bg-container .pre-nex .up-arrow {
-  width: 9rem;
-  padding-left: 2rem;
-}
-
-body .bg-container .pre-nex .up-arrow:hover {
-  cursor: pointer;
-}
-
-body .bg-container .pre-nex .up-arrow:hover .up {
-  background-color: #ff4848;
-}
-
-body .bg-container .pre-nex .up-arrow .up {
-  -webkit-animation-name: bottomFade;
-          animation-name: bottomFade;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
-          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
-  position: relative;
-  left: 1rem;
-  bottom: 0;
-  background-color: white;
-  width: 0.3rem;
-  margin-bottom: 3rem;
-  height: 8rem;
-  margin-right: 6rem;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-
-body .bg-container .pre-nex .up-arrow .up:before {
-  content: "";
-  position: absolute;
-  width: 3rem;
-  height: 0.3rem;
-  border-radius: 2rem;
-  background-color: #ff4848;
-  top: 1rem;
-  left: -2.4rem;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-body .bg-container .pre-nex .up-arrow .up:after {
-  content: "";
-  position: absolute;
-  width: 3rem;
-  height: 0.3rem;
-  border-radius: 2rem;
-  background-color: #ff4848;
-  top: 1rem;
-  left: -0.3rem;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
 body .bg-container .star {
   position: absolute;
   top: -112px;
@@ -653,7 +682,10 @@ body .bg-container .moon-shine {
 }
 
 body #about {
-  display: none;
+  -webkit-transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -731,6 +763,7 @@ body #about .about-header .button {
   color: white;
   font-size: 1.5rem;
   font-weight: 700;
+  text-decoration: none;
   -webkit-animation-name: leftFade;
           animation-name: leftFade;
   -webkit-animation-duration: 2s;
@@ -763,7 +796,10 @@ body #about .about-img .image img {
 }
 
 body #more-me {
-  display: none;
+  -webkit-transform: translateX(100%) scale(0);
+          transform: translateX(100%) scale(0);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -772,10 +808,63 @@ body #more-me {
   width: 90vw;
 }
 
+body #more-me .more-me-image {
+  position: absolute;
+  left: 0;
+  top: 6%;
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #more-me .more-me-image .image {
+  height: 61.5vh;
+  width: 20vw;
+  overflow: hidden;
+}
+
+body #more-me .more-me-image .image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+}
+
+body #more-me .more-me-image a {
+  position: absolute;
+  bottom: -12%;
+  left: 0;
+  width: 17.5vw;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ff4848;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body #more-me .more-me-image a:hover {
+  cursor: pointer;
+}
+
 body #more-me .more-about {
-  width: 90vw;
-  height: 60vh;
-  background-color: rgba(91, 168, 47, 0.918);
+  width: 60vw;
+  position: absolute;
+  bottom: 20%;
+  right: 7%;
+  height: 67vh;
   -webkit-animation-name: rightFade;
           animation-name: rightFade;
   -webkit-animation-duration: 2s;
@@ -784,8 +873,16 @@ body #more-me .more-about {
           animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
 }
 
+body #more-me .more-about img {
+  width: 100%;
+  height: auto;
+}
+
 body #contact {
-  display: none;
+  -webkit-transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -863,12 +960,17 @@ body #contact .contact-header .button {
   color: white;
   font-size: 1.5rem;
   font-weight: 700;
+  text-decoration: none;
   -webkit-animation-name: leftFade;
           animation-name: leftFade;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
   -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
           animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #contact .contact-header .button:hover {
+  cursor: pointer;
 }
 
 body #contact .contact-header .button:hover {

@@ -12,35 +12,37 @@
     <header>
         <nav>
             <div class="name">
-                <h2>Shmagi Oniani</h2>
+                <h2 onclick="homeActive()"> Shmagi Oniani</h2>
             </div>
             <div class="social-icons">
                 <div class="facebook">
-                    <img src="assets/images/facebook-bright.png" class="facebook-bright" alt="">
+                    <a href="https://www.facebook.com/shmagi.onaini"> 
+                        <img src="assets/images/facebook-bright.png" class="facebook-bright" alt="">
+                    </a>
                 </div>
                 <div class="github">
-                    <img src="assets/images/github-bright.png" class="github-bright" alt="">
+                    <a href="https://github.com/shmagiOniani">
+                        <img src="assets/images/github-bright.png" class="github-bright" alt="">
+                    </a>
                 </div>
             </div>
         </nav>
         <div class="left-bar">
-            <ul>
-                <li  onclick="homeActive()"><a href="#home">home</a></li>
-                <li  onclick="projectsActive()"><a href="#nav-project">project</a></li>
-                <li  onclick="aboutActive()"><a href="#nav-about">about</a></li>
-                <li  onclick="contactActive()"><a href="#nav-contact">contact</a></li>
-            </ul>
-        </div>
-    </header>
-    <section class="bg-container">
-        <div class="pre-nex">
-            <div class="down-arrow" onclick="moveDown()">
-                <div class="down"></div>
-            </div>
             <div class="up-arrow" onclick="moveUp()">
                 <div class="up"></div>
             </div>
+            <ul>
+                <li id="nav-home" class="active-nav" onclick="homeActive()"><a href="#home">home</a></li>
+                <!-- <li  onclick="projectsActive()"><a href="#nav-project">project</a></li> -->
+                <li id="nav-about" onclick="aboutActive()"><a href="#nav-about">about</a></li>
+                <li id="nav-contact" onclick="contactActive()"><a href="#nav-contact">contact</a></li>
+            </ul>
+            <div class="down-arrow" onclick="moveDown()">
+                <div class="down"></div>
+            </div>
         </div>
+    </header>
+    <section class="bg-container">
         <img src="assets/images/stars.svg" alt="" class="star layer" data-speed="20000">
         <img src="assets/images/circles.svg" alt="" class="moon-shine layer " data-speed="30000">
     </section>
@@ -49,8 +51,8 @@
             <h1 class="left-fade">SHMAGI</h1>
             <h1 class="left-fade">ONIANI</h1>
             <div class="underlines left-fade"></div>
-            <p class="left-fade">web designer /</p>
-            <p class="left-fade">markup engineer.</p>
+            <p class="left-fade">web-developer /</p>
+            <p class="left-fade">markup designer.</p>
         </div>
         <img src="assets/images/bright-shade(1).png" alt="" class="bright-shade-1 layer fade" data-speed="50000">
         <img src="assets/images/bright-shade(2).png" alt="" class="bright-shade-2 layer fade" data-speed="70000">
@@ -63,6 +65,7 @@
     </div>
 
     <div class="curtain"></div>
+
     <div id="about" >
         <div class="about-header">
             <h1 class="left-fade">About Me</h1>
@@ -79,14 +82,24 @@
         </div>
     </div> 
     <div id="more-me">
-        <div class="more-about"></div>
+        <div class="more-me-image">
+            <div class="image">
+                <img src="assets/images/Me(1).jpg" alt="">
+            </div>
+            <a href="#about" onclick="aboutMeOut()">Back</a>
+        </div>
+        <div class="more-about">
+            <div class="image">
+                <img src="assets/images/about-me.svg" alt="">
+            </div>
+        </div>
     </div>
     <div id="contact" >
         <div class="contact-header">
             <h1 class="left-fade">Contact Me</h1>
             <div class="underlines left-fade"></div>
             <p class="left-fade phone">E-mail :  <a href=""> onianishmagi@gmail.com</a></p>
-            <p class="left-fade">Mobile Phone :  (+995) 579 994 845</p>
+            <p class="left-fade">Mobile Phone :  (+995) 579 994 859</p>
            
         </div>
         <div class="contact-img">

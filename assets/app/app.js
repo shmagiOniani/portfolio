@@ -13,20 +13,28 @@ function parallax(e){
 function moveUp () {
     if($('#contact').hasClass('active')){
         $('#contact').removeClass('active');
+        $('#nav-contact').removeClass('active-nav');
         $('#about').addClass('active');
+        $('#nav-about').addClass('active-nav');
     }else if($('#about').hasClass('active')){
         $('#about').removeClass('active');
+        $('#nav-about').removeClass('active-nav');
         $('#home').addClass('active');
+        $('#nav-home').addClass('active-nav');
     }
 }
 
 function moveDown () {
     if($('#home').hasClass('active')){
         $('#home').removeClass('active');
+        $('#nav-home').removeClass('active-nav');
         $('#about').addClass('active');
+        $('#nav-about').addClass('active-nav');
     }else if($('#about').hasClass('active')){
         $('#about').removeClass('active');
+        $('#nav-about').removeClass('active-nav');
         $('#contact').addClass('active');
+        $('#nav-contact').addClass('active-nav');
     }
 }
 
@@ -42,31 +50,40 @@ function aboutMeOut() {
 
 function homeActive() {
     $('#about').removeClass('active');
-    $('#projects').removeClass('active');
+    $('#nav-about').removeClass('active-nav');
+    // $('#projects').removeClass('active');
     $('#more-me').removeClass('active');
     $('#contact').removeClass('active');
+    $('#nav-contact').removeClass('active-nav');
     $('#home').addClass('active');
+    $('#nav-home').addClass('active-nav');
 }
-function projectsActive() {
-    $('#home').removeClass('active');
-    $('#about').removeClass('active');
-    $('#more-me').removeClass('active');
-    $('#contact').removeClass('active');
-    $('#project').addClass('active');
-}
+// function projectsActive() {
+//     $('#home').removeClass('active');
+//     $('#about').removeClass('active');
+//     $('#more-me').removeClass('active');
+//     $('#contact').removeClass('active');
+//     $('#project').addClass('active');
+// }
 function aboutActive() {
     $('#home').removeClass('active');
-    $('#projects').removeClass('active');
+    $('#nav-home').removeClass('active-nav');
+    // $('#projects').removeClass('active');
     $('#more-me').removeClass('active');
     $('#contact').removeClass('active');
+    $('#nav-contact').removeClass('active-nav');
     $('#about').addClass('active');
+    $('#nav-about').addClass('active-nav');
 }
 function contactActive() {
     $('#home').removeClass('active');
+    $('#nav-home').removeClass('active-nav');
     $('#about').removeClass('active');
-    $('#projects').removeClass('active');
+    $('#nav-about').removeClass('active-nav');
+    // $('#projects').removeClass('active');
     $('#more-me').removeClass('active');
     $('#contact').addClass('active');
+    $('#nav-contact').addClass('active-nav');
 }
 
 // $(document).ready(function(){
