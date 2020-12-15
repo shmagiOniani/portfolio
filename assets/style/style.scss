@@ -23,6 +23,7 @@ body {
   }
   .active-arrow {
     opacity: 1!important;
+    transition: all 1s ease-in-out;
   }
   .curtain {
     position: absolute;
@@ -114,6 +115,7 @@ body {
       height: 90vh;
       .down-arrow {
         opacity: 0;
+        transition: all 1s ease-in-out;
         display: flex;
         align-items: flex-end;
         justify-content: center;
@@ -147,6 +149,7 @@ body {
       }
       .up-arrow {
         opacity: 0;
+        transition: all 1s ease-in-out;
         display: flex;
         align-items: baseline;
         justify-content: center;
@@ -205,9 +208,9 @@ body {
     }
     .bright-shade-1 {
       position: absolute;
-      top: 9%;
-      right: 5%;
-      width: 29rem;
+      top: 6%;
+      right: 0%;
+      width: 17%;
       height: auto;
       object-fit: cover;
       animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
@@ -215,17 +218,17 @@ body {
     .bright-shade-2 {
       position: absolute;
       top: 9%;
-      right: 39%;
-      width: 28rem;
+      right: 29%;
+      width: 20%;
       height: auto;
       object-fit: cover;
       animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
     }
     .moon {
       position: absolute;
-      top: 3.5%;
-      right: 12.5%;
-      width: 54rem;
+      top: 5%;
+      right: 7%;
+      width: 35%;
       height: auto;
       object-fit: cover;
       animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
@@ -233,26 +236,26 @@ body {
     .portfolio {
       position: absolute;
       top: 42%;
-      right: 29.5%;
-      width: 46rem;
+      right: 22%;
+      width: 30%;
       height: auto;
       object-fit: cover;
       animation-timing-function: ease;
     }
     .dark-shade-1 {
       position: absolute;
-      top: 71%;
-      right: 12%;
-      width: 25rem;
+      top: 66%;
+      right: 6%;
+      width: 15%;
       height: auto;
       object-fit: cover;
       animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
     }
     .dark-shade-2 {
       position: absolute;
-      top: 64%;
-      right: 35%;
-      width: 34rem;
+      top: 61%;
+      right: 26%;
+      width: 20%;;
       height: auto;
       object-fit: cover;
       animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
@@ -260,8 +263,8 @@ body {
     .dark-shade-3 {
       position: absolute;
       top: 37%;
-      right: -1%;
-      width: 35rem;
+      right: -5%;
+      width: 20%;
       height: auto;
       object-fit: cover;
       animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
@@ -292,8 +295,8 @@ body {
     }
     .star {
       position: absolute;
-      top: -112px;
-      right: 77px;
+      top: 0;
+      right: 0;
       width: 89%;
       height: auto;
       object-fit: cover;
@@ -301,7 +304,7 @@ body {
     .moon-shine {
       position: absolute;
       right: -15%;
-      width: 135rem;
+      width: 75%;
       height: auto;
       object-fit: cover;
     }
@@ -353,18 +356,18 @@ body {
           height: auto;
           border-radius: 1.5rem;
         }
-      }
-      a {
-        position: absolute;
-        bottom: -12%;
-        left: 0;
-        width: 17.5vw;
-        border-top-left-radius: 0 !important;
-        border-top-right-radius: 0 !important;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        @include button;
+        a {
+          position: absolute;
+          bottom: -12%;
+          left: 0;
+          width: 17.1vw;
+          border-top-left-radius: 0 !important;
+          border-top-right-radius: 0 !important;
+          display: flex;
+          text-align: center;
+          justify-content: center;
+          @include button;
+        }
       }
     }
     .more-about {
@@ -426,9 +429,10 @@ body {
 
 @media only screen and (max-width: 600px) {
     html{
-    font-size: 3px;
+    font-size: 3px!important;
     }
     body {
+      display: block!important;
       overflow: hidden;
       header {
         margin-top: 20rem;
@@ -550,8 +554,8 @@ body {
 //     font-size: 8px;
 //     }
 // }
-// @media only screen and (min-width: 992px) {
-//     html{
-//     font-size: 8px;
-//     }
-// }
+@media only screen and (max-width: 992px) {
+    html{
+    font-size: 7px;
+    }
+}
